@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@use "sass:math";
+
+// px値をvwに変換（デザイン（750px幅）に対して）
+@function ex($val) {
+  @return round(math.div($val, 750) * 10000vw) * 0.01;
+}
+
+.sec-note {
+  padding-top: ex(40);
+  padding-bottom: ex(10);
+  color: #888;
+  background: #f8f8f8;
+  dl {
+    margin-bottom: ex(30);
+  }
+  dt {
+    font-weight: bold;
+  }
+  em {
+    font-weight: bold;
+  }
+}
+
+.l-footer {
+  margin-bottom: ex(130);
+  &__ssl {
+    margin-bottom: ex(50);
+    background: #e5eaeb;
+  }
+}
+.ab2281 {
+  display: none;
+}
+.text_link {
+  color: #000;
+  font-size: 3.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid;
+  width: 90%;
+  margin: 1em auto;
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 0.6em;
+    height: 0.6em;
+    border-top: 0.15em solid;
+    border-right: 0.15em solid;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    margin-left: 0.5em;
+  }
+}

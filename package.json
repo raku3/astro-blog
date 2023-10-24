@@ -13,6 +13,14 @@
     "@astrojs/mdx": "^1.1.2",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.2",
-    "astro": "^3.3.2"
+    "@fontsource/noto-sans-jp": "^5.0.16",
+    "astro": "^3.3.2",
+    "astro-auto-import": "^0.3.1",
+    "microcms-js-sdk": "^2.7.0",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.9.1"
   }
 }
