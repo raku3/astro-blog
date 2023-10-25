@@ -21,8 +21,13 @@ const options = {
   day: "numeric",
   weekday: "short"
 };
+
 const now = new Date(blog.publishedAt);
 const dateString = now.toLocaleDateString("ja-JP", options);
+const tags = blog.tags;
+const names = tags.map((tag: string) => tag.name);
+
+console.log(names);
 ---
 
 <Layout title="My first blog with Astro">
@@ -31,6 +36,11 @@ const dateString = now.toLocaleDateString("ja-JP", options);
     <p class="publishedAt">
       公開日時：{dateString}
     </p>
+    <!-- <div>tags:{blog.tags}</div> -->
+    <div>tags:{names}</div>
+
+    <div>cate:{blog.category.name}</div>
+    <!-- <div>aaa:{blog.category}</div> -->
     <div class="post" set:html={blog.content} />
   </main>
 </Layout>
@@ -39,6 +49,5 @@ const dateString = now.toLocaleDateString("ja-JP", options);
   main {
     margin: auto;
     padding: 1em;
-    max-width: 60ch;
   }
 </style>

@@ -1,7 +1,7 @@
 import { createClient, MicroCMSQueries } from "microcms-js-sdk";
 const client = createClient({
   serviceDomain: import.meta.env.MICROCMS_SERVICE_DOMAIN,
-  apiKey: import.meta.env.MICROCMS_API_KEY,
+  apiKey: import.meta.env.MICROCMS_API_KEY
 });
 
 export type Blog = {
@@ -12,6 +12,8 @@ export type Blog = {
   revisedAt: string;
   title: string;
   content: string;
+  tags: any;
+  category: string;
   eyecatch: {
     url: string;
     height: number;
@@ -35,6 +37,6 @@ export const getBlogDetail = async (
   return await client.getListDetail<Blog>({
     endpoint: "blogs",
     contentId,
-    queries,
+    queries
   });
 };
