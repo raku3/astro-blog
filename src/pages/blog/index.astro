@@ -6,10 +6,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/config";
 import Layout from "@/layouts/BlogPost.astro";
 //microCMS呼び出し
 import { getBlogs, getBlogDetail } from "@/lib/microcms";
+import { string } from "astro/zod";
 const { contents: posts } = await getBlogs({
   fields: ["id", "title", "publishedAt", "category", "tags"]
 });
-console.table(posts);
 ---
 
 <Layout>
@@ -35,7 +35,7 @@ console.table(posts);
   </ul>
 </Layout>
 
-<style>
+<style lang="scss">
   li {
     margin-bottom: 1em;
   }
@@ -65,5 +65,11 @@ console.table(posts);
     border: 1px solid;
     border-radius: 8px;
     margin-right: 0.5em;
+  }
+
+  .Hstack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>

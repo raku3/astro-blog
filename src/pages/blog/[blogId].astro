@@ -26,8 +26,6 @@ const now = new Date(blog.publishedAt);
 const dateString = now.toLocaleDateString("ja-JP", options);
 const tags = blog.tags;
 const names = tags.map((tag: string) => tag.name);
-
-console.log(names);
 ---
 
 <Layout title="My first blog with Astro">
